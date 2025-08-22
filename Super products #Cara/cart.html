@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>New Product Website</title>
+<link  rel="stylesheet"  href="style.css">
+</head>
+<body>
+<section id="hearder">
+    <a href="#"><img  src="logo.png"  alt="" class="logo"></a>
+
+    <div>
+        <ul id="navbar" style="margin-left: 80%;">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="shop.html" >Shop</a></li>
+            <li><a href="blog.html" >Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" >contact</a></li>
+        <li><a id="lg-bag" href="cart.html" class="active"><i class="far fa-shoping-bag">#</i></a></li>
+            <a href="#" id="close"><i class="far fa-times"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <a href="cart.html"><i class="far fa-shoping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+    </div>
+</section>
+<section  id="hero3" style="width: 100%;">
+    <div class="cent">
+        <h1>#let's_talk</h1>
+        <p>LEAVE A MESSAGE. We love to hear from you!</p></div>
+    </section>
+    <section id="cart-table">
+     <div class="table">
+        <div class="thead">
+          <span class="head">REMOVE</span> 
+          <span class="head1">IMAGE</span> 
+          <span class="head2"> PRODUCT </span>
+          <span class="head3"> PRICE</span>
+          <span class="head4">QUANTITY </span>
+          <span class="head5">SUBTOTAL</span>
+        </div>
+        </div>
+        <div class="row1"> <input type="radio"  class="but" checked="" name="a" id="radio" /> <img src="pro17.png" alt="" /> <p> Cartoon Astronaut T-Shirts </p> <p>$118.19</p> <input type="number" placeholder="1" class="input" />  <p>$118.19</p> </div>
+        <div class="row2"> <input type="radio"  class="but" checked="" name="a1" id="radio"  /> <img src="pro15.png" alt="" /> <p> Cartoon Astronaut T-Shirts </p> <p>$118.19</p> <input type="number" placeholder="3" class="input" />  <p>$118.19</p> </div>
+        <div class="row3"> <input type="radio"  class="but" checked="" name="a2" id="radio"/> <img src="pro16.png" alt="" /> <p> Cartoon Astronaut T-Shirts </p> <p>$118.19</p> <input type="number" placeholder="2" class="input" />  <p>$118.19</p> </div>
+     </div>
+    </section>
+    <section id="apply-section">
+     <div class="apply">
+<h3>Apply Coupon</h3>
+<input type="text" name="email" placeholder="Enter Your Coupon"/> 
+<button class="normal"> Apply</button>
+     </div>
+     <div class="cart-total">
+      <h3>Cart Totals</h3>
+      <div class="tab">
+      <p  id="border1" >Cart Sutotal<p class="next-p">$335</p></p>
+      <p id="border" >Shopping <p class="next-p">Free</p></p>
+      <p class="dark "  >Total <p class="next-p dark">$335</p></p></div>
+      <button class="normal" id="button">Proceed to checkout</button>
+     </div>
+    </section>
+<footer class="section-p1" id="footer">
+    <div class="col">
+        <img class="logo" src="logo.png" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 562 Wellington Road, Street 32, San Francisco
+        </p>
+        <p><strong>Phone:</strong>+01 2222 365 /(+91) 01 2345 6789</p>
+        <p><strong>Hours:</strong>10:00 - 18:00,Mon -Sat</p>
+        <div class="follow">
+            <h4>Follow Up</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact us</a>
+    </div>
+    <div class="col">
+        <h4>Account</h4>
+        <a href="#">Sign In </a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishliste</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col install">
+        <h4>Install App</h4>
+        <div class="row">
+            <img src="fo11.png" alt="">
+            <img src="fo12.png" alt="">
+        </div>
+        <p>Secured Payment Geteways</p>
+        <img src="fo1.png" alt="">
+    </div>
+    <div class="copyright">
+     <p>&copy; 2024, Tanya Verse -HTML CSS Ecommerce Template</p>
+    </div>
+</footer>
+</body>
+<script type="text/javascript">
+const bar = document.getElementById('bar');
+const close = document.getElementById('close');
+const nav =document.getElementById('navbar');
+if(bar){
+    bar.addEventListener('click',()=>{
+        nav.classList.add('active');
+    })
+}
+if(close){
+    close.addEventListener('click',()=>{
+        nav.classList.remove('active');
+    })
+}
+</script>
+</html>
+
+    

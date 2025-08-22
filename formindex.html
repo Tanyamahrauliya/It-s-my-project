@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body{
+            background-color: rgb(60, 66, 71);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main{
+            width: 40%;
+            margin-top: 3%;
+            margin-left: 25%;
+            height:890px;
+            background-color: white;
+        }
+        .parent{
+            margin-left:10%;
+             margin-top: 2%;
+             position:absolute;
+        }
+        .input{
+            margin-left:3%;
+            color: rgb(109, 108, 108);
+             font-size: 120%;
+             position:absolute;
+        }
+        .submit{
+            width: 85%;
+             /* font-variant-caps: all-petite-caps;  */
+           font-size: 150%; height: 60px; border-radius: 0.5vh; border: none;
+           margin-top: 5%; margin-left: 7%; background-color: rgb(43, 43, 153); color: white;
+        }
+        .password-check{
+            display: flex;
+            color: grey;
+            font-weight: bold;
+            margin-left: 7%;
+        }
+    </style>
+</head>
+<body>
+ <form class="main" methon="" action="" onsubmit="return validate()">
+ <h1 class="parent">Registration Form</h1>
+ <p class="input" style="margin-top: 10%;">Username*</p>
+    <input type="text" name="" required="" placeholder="Username" 
+    style=" margin-top:31%;  margin-left: 7%;  width: 85%; height: 40px;   
+    border: none; background-color: rgb(233, 233, 233); 
+    border-radius: 0.5vh;  " />
+    <p class="input" style="margin-top: 2%;">Password*</p>
+    <input type="text" name="" required="" id="password"  placeholder=""  onkeyup="passcheck(this.value)"
+     style=" margin-top:15%;  margin-left: 7%;  width: 85%; height: 40px;   
+    border: none; background-color: rgb(233, 233, 233); 
+    border-radius: 0.5vh;  " />
+     <p class="input" style="margin-top: 2%;">Confirm Password*</p>
+     <input type="password" onkeyup="check(this)" id="confirm_password" name="" required="" placeholder=""
+     style=" margin-top:15%;  margin-left: 7%;  width: 85%; height: 40px;   
+     border: none; background-color: rgb(233, 233, 233); 
+     border-radius: 0.5vh;  " />
+     <error id="alert" style="margin-left: 7%; margin-top: 2%; color: red;"></error>
+     <p>
+        <label class="password-check">8 characters</label>
+        <label class="password-check">1 lower case character</label>
+        <label class="password-check">1 upper case character</label>
+        <label class="password-check">1 numberical character</label>
+        <label class="password-check"> 1 special character</label>
+     </p>
+     <button  class="submit"   onclick="show(this)" type="button" style="background-color: rgb(223, 212, 212); color: rgb(77, 75, 75);">Show Password</button>
+     <input type="submit" class="submit" value="SUBMIT"/>
+ </form>
+</body>
+<script type="text/javascript">
+    var password = document.getElementById('password');
+    var flag = 1;
+         function check(elem){
+          if(elem.value.length >0){
+            if(elem.value!=password.value){
+               document.getElementById('alert') .innerText ="Confirm password does not match";
+               flag =0;
+            }
+            else{
+               document.getElementById('alert').innerText=" " ;
+               flag =1;
+            }
+          }
+          else{
+            document.getElementById('alert').innerText = " Please enter confirm password";
+            flag = 0;
+          }
+         }
+         function validate(){
+            if(flag==1){
+            return   true;
+            }
+             else{
+                return true;
+
+             }
+         }
+       var password = document.getElementById('password');
+       var passwords = document.getElementById('confirm_password');
+       function show(elem){
+           var type = password.getAttribute("type");
+        if(type==='password'){
+          password.setAttribute('type','text');
+          elem.innerText = "Hide Password";
+        }else{
+            password.setAttribute('type','password');
+            elem.innerText = "Show Password";
+        }
+        if(type==='password'){
+            passwords.setAttribute('type','text');
+
+        }
+        else{
+            passwords.setAttribute('type','password');
+        }
+       }
+       function passcheck(data){
+        var passClass= document.getElementsByClassName('password-check');
+        const lowerCase =new RegExp('(?=.*[a-z])');
+        const upperCase =new RegExp('(?=.*[A-Z])');
+        const number =new RegExp('(?=.*[0-9])');
+        const specialChar =new RegExp('(?=.*[!@#\$%\^&\*])');
+        const eightChar =new RegExp('(?=.{8,})');
+
+        if(eightChar.test(data)){
+         passClass[0].style.color = "green";
+        }else{
+        passClass [0].style.color="grey";
+        }
+
+        if(lowerCase.test(data)){
+         passClass[1].style.color = "green";
+        }else{
+        passClass [1].style.color="grey";
+        }
+
+        if(upperCase.test(data)){
+         passClass[2].style.color = "green";
+        }else{
+        passClass [2].style.color="grey";
+        }
+
+        if(number.test(data)){
+         passClass[3].style.color = "green";
+        }else{
+        passClass [3].style.color="grey";
+        }
+
+        if(specialChar.test(data)){
+         passClass[4].style.color = "green";
+        }else{
+        passClass [4].style.color="grey";
+        }
+    }
+       </script>
+       </html>
