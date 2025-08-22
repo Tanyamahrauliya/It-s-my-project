@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 1;
+            padding: 1;
+        }
+        body{
+            background:linear-gradient(to right ,#77cd,#fddc);
+              /* background: #000; */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+        }
+        .main{
+            margin-left:5% ;
+            margin-top:1%;
+            font-size: 120%;
+            font-weight: 500;
+        }
+        .form{
+            width: 20%;
+            height:30px;
+            margin-top: 5%;
+            margin-left: 2%;
+            border:1px solid grey;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .form:hover{
+            box-shadow:  1px 2px 3px  5px rgb(230, 166, 28);
+        }
+        .form1{
+            width: 10%;
+            margin-top: 1%;
+            height: 30px;
+            border-radius:5px ;
+            border: none;
+            transition: 1s;
+        }
+        .form2{
+            width: 10%;
+            margin-top: 1%;
+            height: 30px;
+            border-radius:5px ;
+            border: none;
+            transition: 1s;
+        }
+        .show{
+            width: 10%;
+            margin: 33px 0px 0px 20px ;
+            position: absolute;
+            height: 36px;
+            border-radius:5px ;
+            background: white;
+            /* color: white; */
+            border: 2px solid #77cd;
+        }
+        .show:hover{
+            /* box-shadow:  1px 2px 3px  5px green; */
+            background: #fddc;
+        }
+        .form1:hover{
+            /* box-shadow:  1px 2px 3px  5px green; */
+            background-color: rgb(111, 146, 111);
+        }
+        .form2:hover{
+            /* box-shadow:  1px 2px 3px  5px red; */
+            background-color: rgb(211, 123, 123);
+        }
+        .fo{
+            width: 150px;
+             height: 30px;
+              border-radius: 5px ;
+        }
+    </style>
+</head>
+<body>
+    <form style="width: 50%; height: 600px; background-color: white; margin-top:3%; margin-left: 30%; border: 2px #77cd solid;">
+        <h1 id="opt"></h1>    <div class="main">   <h5 id="res"></h5>
+            First Name: <input type="text" required=""  name="name" id="name" placeholder="Enter your first name" class="greet" style="width:30%;
+            height:30px;
+            margin-top: 1%;
+            margin-left: 2%;
+            border:1px solid grey;
+            border-radius: 5px;
+            text-align: center;"/>
+            Last Name: <input type="text" required="" name="" id="name" placeholder="Enter your last name" style="width:30%;
+            height:30px;
+            margin-top: 5%;
+            margin-left: 2%;
+            border:1px solid grey;
+            border-radius: 5px;
+            text-align: center;" /><br>
+            Father Name: <input type="text"  required=""   name="" id="name" placeholder="Enter your father name"style="width: 30%;
+            height:30px;
+            margin-top: 5%;
+            margin-left: 2%;
+            border:1px solid grey;
+            border-radius: 5px;
+            text-align: center;"/><br>
+            Account Number: <input type="password"  required=""   name="" id="password" onkeyup="sem(this)" placeholder="Enter your account number" style="width: 30%; height:30px;
+            margin-top: 5%;
+            margin-left: 2%;
+            border:1px solid grey;
+            border-radius: 5px;
+            text-align: center;"/>
+             <button onclick="toggle(this)"  class="show" type="button">Show number</button> <br><br>
+          Adhar Number: <input type="text" required="" name="" id="name" placeholder="Enter your adhar number" onkeyup="val(this)"  style="width: 30%;
+          height:30px;
+          margin-top: 1%;
+          margin-left: 2%;
+          border:1px solid grey;
+          border-radius: 5px;
+          text-align: center;"/>
+           Select your State: <select class="fo" required="">
+            <option value=""> Select your state </option>
+               <option value="Uttar Pradesh"> Uttar Pradesh </option>
+               <option value="Rajasthan"> Rajasthan</option>
+               <option value="MadhyaPradesh"> MadhyaPradesh </option>
+               <option value="Bihar"> Bihar  </option>
+               <option value="Assam"> Assam </option>
+               <option value="Maharashtra"> Maharashtra </option>
+               <option value="Jharkhand">Jharkhand  </option>
+               <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+               <option value="Karnataka"> Karnataka  </option>
+               <option value="Gujarat"> Gujarat </option>
+               <option value="Uttarakhand"> Uttarakhand </option>
+               <option value="Kerala">Kerala</option>
+            </select><br>
+          <br><input type="radio" name="female" value="f"/> Female 
+        <input type="radio" name="female" value="m"/>Male
+        <input type="radio" name="female" value="o"/> Other <br><br>
+           Address:<br>
+           <textarea type="address"  required="" name="address" id="address" class="fo" style="margin-top: 2%; text-align: center; width: 50%; border-radius: 5px; height: 100px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; "></textarea>
+                            <!-- <button onclick="opt()">OPT</button> --><br>
+                            <input type="submit" class="form1" style="margin-left: 70%;" onclick="greet()" />
+                            <input type="reset" class="form2" style="margin-left: 1%;"/>
+                        </div>
+</form>
+</body>
+<script type="text/javascript">
+   var password = document.getElementById('password');
+    function toggle(elem){
+        var type = password.getAttribute('type');
+        if(type==='password'){
+        password.setAttribute('type','text');
+        elem.innerText ="Hide number";
+    }
+    else{
+        password.setAttribute('type','password');
+        elem.innerText ="Show number";
+    }
+    }
+      document.getElementById('res').style.color = "red";
+      document.getElementById('res').style.fontWeight ="400";
+ function val(elem){
+ if(isNaN (elem.value)){
+  document.getElementById('res').innerText =" Please enter number only ";
+  }
+ else{
+ document.getElementById('res').innerText =" "  ;{
+ if(elem.value.length>12){
+ document.getElementById('res').innerText = " Please enter only twelve digits" ;
+   }
+   else{
+    document.getElementById('res').innerText= "";
+   }
+  }
+ }
+}
+document.getElementById('res').style.color = "red";
+function sem(elem){
+if(isNaN (elem.value)){
+ document.getElementById('res').innerText =" Please enter number only ";
+}
+else{
+ document.getElementById('res').innerText =" "  ;{
+if(elem.value.length>16){
+document.getElementById('res').innerText = " Please enter only sixteen digits" ;
+   }
+   else{
+    document.getElementById('res').innerText= "";
+   }
+  }
+ }
+}
+
+</script>
+<script type="text/javascript">
+  function greet(){
+    var name = document.getElementById('name')[0].value;
+    var string = document.getElementsByClassName('greet')[0].value=" ";
+    console.log(name);
+  }
+</script>
+</html> 

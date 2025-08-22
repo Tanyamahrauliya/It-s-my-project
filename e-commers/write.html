@@ -1,0 +1,225 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Search Bar</title>
+<style>
+    body {
+        background-color: #111;
+        font-family: Arial, sans-serif;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+    }
+
+    h1 {
+        color: #e9b172;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        position: relative;
+        width: 350px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 12px 40px 12px 15px;
+        border: 2px solid #e9b172;
+        border-radius: 30px;
+        background-color: transparent;
+        color: #e9b172;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]::placeholder {
+        color: #e9b172;
+        opacity: 0.7;
+    }
+
+    input[type="text"]:focus {
+        background-color: rgba(233, 177, 114, 0.1);
+        box-shadow: 0 0 10px #e9b172;
+    }
+
+    button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        background-color: #e9b172;
+        border: none;
+        padding: 0 15px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #111;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #d8a05e;
+    }
+
+    /* Search results */
+    ul {
+        margin-top: 20px;
+        list-style: none;
+        padding: 0;
+        width: 350px;
+    }
+
+    li {
+        padding: 10px;
+        background-color: #222;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        transition: 0.2s;
+    }
+
+    li:hover {
+        background-color: #333;
+    }
+</style>
+</head>
+<body>
+
+<h1>Search Something</h1>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Type to search...">
+    <button onclick="searchItems()">Search</button>
+</div>
+<ul id="searchResults">
+    <li>HTML Tutorial</li>
+    <li>CSS Basics</li>
+    <li>JavaScript Functions</li>
+    <li>Responsive Web Design</li>
+    <li>Python Programming</li>
+    <li>Web Development Projects</li>
+</ul>
+
+<script>
+function searchItems() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let listItems = document.querySelectorAll("#searchResults li");
+
+    listItems.forEach(item => {
+        if (item.textContent.toLowerCase().includes(input)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onchange Animation Demo</title>
+<style>
+    body {
+        background: #111;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+    }
+
+    select {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: none;
+        background: #e9b172;
+        color: #111;
+        cursor: pointer;
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(135deg, #e9b172, #d87a16);
+        margin: 40px auto;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    /* Animations */
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-50px); }
+    }
+
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes scale {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.5); }
+    }
+
+    @keyframes fade {
+        0% { opacity: 1; }
+        50% { opacity: 0.3; }
+        100% { opacity: 1; }
+    }
+
+    /* Apply animation dynamically */
+    .bounce { animation: bounce 1s infinite; }
+    .rotate { animation: rotate 2s linear infinite; }
+    .scale { animation: scale 1.5s ease-in-out infinite; }
+    .fade { animation: fade 2s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<h2>🎨 Select an Animation</h2>
+<select id="animationSelect" onchange="applyAnimation()">
+    <option value="">-- Choose Animation --</option>
+    <option value="bounce">Bounce</option>
+    <option value="rotate">Rotate</option>
+    <option value="scale">Scale</option>
+    <option value="fade">Fade</option>
+</select>
+
+<div id="box" class="box">Animate Me</div>
+
+<script>
+function applyAnimation() {
+    let box = document.getElementById("box");
+    let selected = document.getElementById("animationSelect").value;
+
+    // Remove previous animation classesi
+    box.className = "box";
+
+    // Add the selected animation class
+    if (selected) {
+        box.classList.add(selected);
+    }
+}
+</script>
+
+</body>
+</html>

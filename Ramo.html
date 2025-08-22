@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drom see</title>
+    <style>
+        body{
+            background: linear-gradient(to right,#00fff7,#ff00ee);
+            /* background-image: url(anima.gif); */
+            background-size: cover;
+        }
+        .border{
+            width: 50%;
+            height: 300px;
+            /* margin-top: 1%; */
+            margin-left: 25%;
+            background-color:black;
+            border:  grey solid 50px;
+        }
+.main{
+    border:none;
+    font-family: cursive;
+    font-size: 250%;
+    font-weight:bold;
+    width: 15%;
+    height: 80px;
+    color: orange;
+    border-radius: 5vh;
+    position: absolute;
+    background:repeating-radial-gradient(circle,white,yellow 100%);
+    /* background-color: black; */
+    /* color:white; */
+    margin-left:2%;
+    margin-top: 10%;
+}
+.main:hover{
+    box-shadow: 2px 10px 0px 2px sandybrown;
+}
+.main1:hover{
+    box-shadow: 2px 10px 0px 2px sandybrown;
+}
+.main1{
+    position: absolute;
+    border:none;
+    font-family: cursive;
+    font-size: 250%;
+    font-weight:bold;
+    width: 15%;
+    height: 80px;
+    color: orange;
+    border-radius: 5vh;
+    background:repeating-radial-gradient(circle,white,yellow 100%);
+    /* background-color: black; */
+    /* color:white; */
+    margin-left:32%;
+    margin-top: 7%;
+}
+#h1{
+    margin-left:35%;
+    margin-top: 10%;
+    font-family:cursive;
+    font-size: 1000%;
+    color:yellow;
+}
+    </style>
+</head>
+<script>
+    // var my = setInterval(count,80);
+    // var c = 1;
+    // var a = 1;
+    // function count(){
+    //     document.getElementById('h1').innerText = c ;
+    //     c++;
+    //     // document.getElementById('h2').innerText = a ;
+    //     // a++;}
+    // var demo = document.addEventListener("DOMContentLoaded", 
+    function emoji() {
+      var emojiElement = document.getElementById('h1');
+     var emojis = [ '😂', '😍', '😢', '😡', '🎉', '💖', '👍', '🙌','😋','😘','🥰','🤔','🤗','🙂','😚','😙','😶','😑','😐','🙄','😏','😣','😥','😮','😛','😴','😤','😖','🙁','☹','😲','🤑','😝','🤐','😫','🥱','🤡','🤠','🥺','🥳','😇','🤧','🤭','🧐','🤓','😈','👿','👹','👺','💀','🐨','🐼','🐸','🦓','🐭','🐗','🐷','🐮','🦝','🐵','🐶','🐺','🐱','🦁','🐯','🦒','🦊','🐻','🐰','🐹','🦄','🐔','🐲','🐕‍🦺','🦮','🦧','🦍','🐒','🐾','🐽','🦔','🐀','🐇','🐿','🦎',];
+     // Function to change the emoji randomly every 2 seconds
+     setInterval(() =>{
+        var  randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+       emojiElement.textContent = randomEmoji;
+        }, 100);
+    };
+//     function emojistop(){
+//         clearTimeout(demo);
+//     } 
+//     function start(){
+//     var my = setTimeout(count,10);
+//    }
+    function call(){
+     var time  = document.write("<title> Drom see </title> <body><a href='file:///C:/Users/dell/Desktop/web/Ramo.html'><button> Back</button> </a> </body> " );
+    //  var time  = document.write("<title> Drom see </title><body style='background:linear-gradient(to right,#00fff7,#ff00ee);'><h1 style='color:white;  background-image:url(6.jfif); background-size:cover ; font-family:cursive; border:none; border-radius:5vh; width:50%; margin-left:20%;  height:500px; padding:2%;'></h1> <a href='file:///C:/Users/dell/Desktop/web/Ramo.html' style=' color:black; text-decoration:none;'><button style=' background:linear-gradient(to right ,#fff007,#ff00ee ); width:55%; height:70px; margin-left:20%; font-size: 150%; border-radius:5vh; font-family:cursive; padding:1px;'> Next</button> </a></body>" );
+    // document.getElementById('hero').innerHTML =time;
+    var main = alert("Next");
+    document.getElementById('text').innerHTML = main ,time;
+    }
+</script>
+<body>
+    <div class="border">
+        <h1 id="h1"></h1>
+        <button onclick="emoji()" class="main">Start</button>
+        <br/><br/>
+        <button onclick="call()" class="main1">Stop</button>
+        <div id="hero"></div>
+        <!-- <button onclick="call()" class="main1" id="h1"> </button> -->
+        <div id="hero1"></div>
+    </div>
+   <h1 id="text" style="color:yellow; margin-left: 50%; font-family: cursive; font-size:200;"> Welcom </h1>
+</body>
+</html>
