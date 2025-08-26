@@ -14,10 +14,10 @@
             z-index: 1;
             top: 20px;
             left: 500px;
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
             transition: 0.3s;
             padding-top: 0px;
-            margin-left:450px ;
+            margin-left:550px ;
         }
         .header{
             height: 70px;
@@ -32,24 +32,83 @@
             box-shadow: 0 0 20px 1px grey;
             background-color: #fff;
         }
-        #hover{
-            color: #55412b;
-     
-        }
+
         .navbar a{
          text-decoration: none;
          color: #e9b172;
          font-size: 18px;
          font-weight: 500;
          font-family: Arial, Helvetica, sans-serif;
-         padding: 20px 20px;
+         padding: 3px  7px;
          transition: 0.2s; 
          cursor: pointer;
         }
-        .navbar a:hover{
-            color: #55412b;
+         .navbar a::after{
+        content: " ";
+        width: 3%;
+        height: 2px;
+        background-color:#e9b172;
+        top: 25px;
+        margin: -2px 20px 0px -50px ;
+        position: absolute;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+    .navbar a:hover::after{
+        transform: scaleX(1);
+    }
+    .navbar a h5{
+         text-decoration: none;
+         color: #e9b172;
+         font-size: 18px;
+         font-weight: 500;
+         position: absolute;
+         margin: -2px 20px 20px -55px;
+         font-family: Arial, Helvetica, sans-serif;
+         padding: 3px  7px;
+         transition: 0.2s; 
+         cursor: pointer;
         }
-        .navbar .closebtn{
+    .navbar a h5::after{
+        content: " ";
+        width: 75%;
+        height: 2px;
+        background-color:#e9b172;
+        top: 25px;
+        margin: 0px 20px 0px -45px ;
+        position: absolute;
+        transform: scaleX(1);
+        transition: transform .5s;
+    }
+      .navbar h3 a{
+         text-decoration: none;
+         color: #e9b172;
+         font-size: 20px;
+         font-weight: 500;
+         position:absolute;
+         margin: -25px 20px 20px 260px;
+         font-family: Arial, Helvetica, sans-serif;
+         padding: 3px  30px;
+         transition: 0.2s;
+         cursor: pointer;
+        }
+       .navbar h3 a:hover{
+         border: 1px solid #e9b172;
+         border-radius: 20vh;
+         box-shadow: 0 0 10px 1px grey;
+      }
+        .navbar  h3 a::after{
+        content: " ";
+        height: 2px;
+        background-color:#fff;
+        top: 25px;
+        margin:-2px 20px 0px -80px ;
+        position: absolute;
+        transform: scaleX(1);
+        transition: transform .5s;
+    }
+
+         .navbar .closebtn{ 
             display: none;
         }
         nav button{
@@ -300,20 +359,40 @@
           color: #000;
           /* position: absolute; */
           }
-   
-          #product-box .boxs i{
-            color:goldenrod;
-            font-size: 18px;
-            margin: 2px 0px 0px 0px ;
-          }  
+     
+               .boxs h6 i{
+               color:goldenrod;
+               font-size: 15px;
+               margin-top: 5px;
+              }  
            
-          #cart {
-            margin: -5px 0px 0px 250px;
-            font-size: 18px;
-            text-decoration: none;
-            color: #000;
-            position: absolute;
-          }
+        .boxs h3 a{
+         text-decoration: none;
+         color: #e9b172;
+         font-size: 25px;
+         font-weight: 500;
+         position:absolute;
+         margin: -15px 20px 20px 300px;
+         font-family: Arial, Helvetica, sans-serif;
+         padding: 3px  30px;
+         transition: 0.2s;
+         cursor: pointer;
+        }
+       .boxs h3 a:hover{
+         border: 1px solid #e9b172;
+         border-radius: 20vh;
+         box-shadow: 0 0 10px 1px grey;
+      }
+        .boxs  h3 a::after{
+        content: " ";
+        height: 2px;
+        background-color:#fff;
+        top: 25px;
+        margin:-2px 20px 0px -80px ;
+        position: absolute;
+        transform: scaleX(1);
+        transition: transform .5s;
+    }
 
 
          @keyframes scro {
