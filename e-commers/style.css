@@ -405,6 +405,9 @@
            scale: 1;
         }
       }
+
+
+      
         @media (max-width: 600px) {
         .navbar{
             height: 25%;
@@ -441,8 +444,6 @@
         #shop{
             display:flex;
             opacity: 100%;
-            /* margin: -10px 20px 20px 20px ; */
-            /* position: absolute; */
            } 
          
         .logo{
